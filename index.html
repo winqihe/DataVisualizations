@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>数据可视化</title>
+    <link rel="stylesheet" href="css/index.css" />
+    <style>
+        table {
+            width: 320px;
+            border-collapse: separate;
+            border-spacing: 0px 10px;
+            border: 0;
+            text-align: center;
+            margin: auto;
+        }
+        
+        td {
+            text-align: center;
+            font-size: 12px;
+            color: #e8e8e8;
+            border: 0;
+        }
+        
+        th {
+            text-align: center;
+            color: #5f72bd;
+            border: 0;
+        }
+    </style>
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="./css/swiper-bundle.min.css">
+
+    <!-- Demo styles -->
+    <style>
+        body {
+            position: relative;
+            height: 100%;
+        }
+        
+        body {
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .swiper-container {
+            width: 90%;
+            height: 85%;
+        }
+        
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 头部 -->
+    <header>
+        <h1>河南工学院图书馆</h1>
+        <div class="show-time"></div>
+        <script>
+            var t = null;
+            t = setTimeout(time, 1000); //开始运行
+            function time() {
+                clearTimeout(t); //清除定时器
+                dt = new Date();
+                var y = dt.getFullYear();
+                var mt = dt.getMonth() + 1;
+                var day = dt.getDate();
+                var h = dt.getHours(); //获取时
+                var m = dt.getMinutes(); //获取分
+                var s = dt.getSeconds(); //获取秒
+                document.querySelector(".show-time").innerHTML =
+                    "时间：" +
+                    y +
+                    "/" +
+                    mt +
+                    "/" +
+                    day +
+                    "/" +
+                    h +
+                    ":" +
+                    m +
+                    ":" +
+                    s +
+                    "";
+                t = setTimeout(time, 1000); //设定定时器，循环运行
+            }
+        </script>
+    </header>
+
+    <!-- 页面主体 -->
+    <section class="mainbox">
+        <!-- 左侧盒子 -->
+        <div class="column">
+            <div class="panel pie">
+                <h2>专本人数</h2>
+                <div class="chart"></div>
+                <div class="panel-footer"></div>
+            </div>
+            <div class="panel bar2" style="width: 350px; height: 230px;">
+                <h2>各学院人数</h2>
+                <div class="chart"></div>
+                <div class="panel-footer"></div>
+            </div>
+        </div>
+        <!-- 中间盒子 -->
+        <div class="column">
+            <!-- 头部 no模块 -->
+            <div class="no">
+                <div class="no-hd">
+                    <ul>
+                        <li>1940</li>
+                    </ul>
+                </div>
+                <div class="no-bd">
+                    <ul>
+                        <li style="color: #4facfe;">入馆总人数</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- map模块 -->
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="./images/img7.jpg" alt="" width="465px" height="355px">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./images/img.jpg" alt="" width="510px" height="400px">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./images/img3.jpg" alt="" width="510px" height="400px">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./images/img4.jpg" alt="" width="510px" height="400px">
+                    </div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+        <!-- 右侧盒子 -->
+        <div class="column">
+            <div class="panel bar">
+                <h2>入馆信息</h2>
+                <!-- 伪元素绘制盒子下边角 -->
+                <div class="table">
+                    <table border="1">
+                        <th>姓名</th>
+                        <th>学号</th>
+                        <th>学院</th>
+                        <th>入馆时间</th>
+                        <tr>
+                            <td>keyte</td>
+                            <td>2011241303</td>
+                            <td>计算机学院</td>
+                            <td>2020-10-12</td>
+                        </tr>
+                        <tr>
+                            <td>贺文奇</td>
+                            <td>1907381113</td>
+                            <td>计算机学院</td>
+                            <td>2020-10-12</td>
+                        </tr>
+                        <tr>
+                            <td>wenqi</td>
+                            <td>1907381113</td>
+                            <td>计算机学院</td>
+                            <td>2020-10-12</td>
+                        </tr>
+                        <tr>
+                            <td>wenqihe</td>
+                            <td>2020201022</td>
+                            <td>计算机学院</td>
+                            <td>2020-10-12</td>
+                        </tr>
+                        <tr>
+                            <td>hewenqi</td>
+                            <td>2020201022</td>
+                            <td>计算机学院</td>
+                            <td>2020-10-12</td>
+                        </tr>
+                        <tr>
+                            <td>Lili</td>
+                            <td>2011241303</td>
+                            <td>计算机学院</td>
+                            <td>2020-10-12</td>
+                        </tr>
+                        <tr>
+                            <td>coco</td>
+                            <td>2011241303</td>
+                            <td>计算机学院</td>
+                            <td>2020-10-12</td>
+                        </tr>
+                        <tr>
+                            <td>jack</td>
+                            <td>2020201022</td>
+                            <td>计算机学院</td>
+                            <td>2020-10-12</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="panel-footer"></div>
+            </div>
+            <div class="panel pie2" style="width: 350px;height: 230px;">
+                <h2>学院人数占比</h2>
+                <div class="chart"></div>
+                <div class="panel-footer"></div>
+            </div>
+        </div>
+    </section>
+    <script src="./js/swiper-bundle.min.js"></script>
+    <script src="js/flexible.js"></script>
+    <script src="js/echarts.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/china.js"></script>
+    <script src="js/index.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            pagination: {
+                el: '.swiper-pagination',
+            },
+            loop: true,
+            autoplay: true,
+        });
+    </script>
+</body>
+
+</html>
